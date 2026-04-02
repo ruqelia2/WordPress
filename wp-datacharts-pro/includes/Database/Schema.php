@@ -35,6 +35,9 @@ class Schema {
         foreach ( $tables as $sql ) {
             dbDelta( $sql );
         }
+
+        // Create the miners data table.
+        \WPDCP\Miners\MinersDatabase::createTable();
     }
 
     /**

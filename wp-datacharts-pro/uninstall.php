@@ -22,6 +22,7 @@ $tables = [
     $wpdb->prefix . 'wpdcp_data_sources',
     $wpdb->prefix . 'wpdcp_templates',
     $wpdb->prefix . 'wpdcp_analytics',
+    $wpdb->prefix . 'miners_data',
 ];
 
 foreach ( $tables as $table ) {
@@ -29,7 +30,7 @@ foreach ( $tables as $table ) {
     $wpdb->query( "DROP TABLE IF EXISTS `{$table}`" );
 }
 
-// Delete all wpdcp_ prefixed options.
+// Delete all wpdcp_ prefixed options (covers miners import history too).
 // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 $wpdb->query(
     "DELETE FROM {$wpdb->options} WHERE option_name LIKE 'wpdcp_%'"

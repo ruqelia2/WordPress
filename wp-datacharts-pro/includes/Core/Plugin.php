@@ -20,6 +20,7 @@ use WPDCP\Database\ChartRepository;
 use WPDCP\Database\DataSourceRepository;
 use WPDCP\Frontend\GutenbergBlock;
 use WPDCP\Frontend\Shortcodes;
+use WPDCP\Miners\MinersImporter;
 use WPDCP\Security\Sanitizer;
 use WPDCP\Security\Validator;
 
@@ -73,6 +74,7 @@ final class Plugin {
         if ( is_admin() ) {
             ( new AdminMenu( $this->container ) )->register();
             ( new Settings() )->register();
+            ( new MinersImporter() )->registerHooks();
         }
 
         ( new Shortcodes( $this->container ) )->register();

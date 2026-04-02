@@ -75,6 +75,20 @@ class AdminPages {
     }
 
     /**
+     * Render the Miners JSON Import page.
+     */
+    public function renderMinersImport(): void {
+        $this->loadTemplate( 'miners-import' );
+    }
+
+    /**
+     * Render the Miners Data List page.
+     */
+    public function renderMinersList(): void {
+        $this->loadTemplate( 'miners-list' );
+    }
+
+    /**
      * Load an admin template file.
      *
      * Provides the $container variable to the template.
