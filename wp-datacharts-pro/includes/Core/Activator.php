@@ -45,10 +45,10 @@ class Activator {
      * Ensure the server meets the minimum PHP version requirement.
      */
     private static function checkPhpVersion(): void {
-        if ( version_compare( PHP_VERSION, '8.1', '<' ) ) {
+        if ( version_compare( PHP_VERSION, '8.0', '<' ) ) {
             wp_die(
                 esc_html__(
-                    'WP DataCharts Pro requires PHP 8.1 or higher. Please upgrade PHP before activating this plugin.',
+                    'WP DataCharts Pro requires PHP 8.0 or higher. Please upgrade PHP before activating this plugin.',
                     'wp-datacharts-pro'
                 ),
                 esc_html__( 'Plugin Activation Error', 'wp-datacharts-pro' ),
