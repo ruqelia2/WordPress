@@ -116,5 +116,25 @@ class AdminMenu {
             'wpdcp-settings',
             [ $pages, 'renderSettings' ]
         );
+
+        // Miners: JSON Import.
+        add_submenu_page(
+            'wpdcp-dashboard',
+            __( 'Miners JSON Import', 'wp-datacharts-pro' ),
+            __( 'Miners Import', 'wp-datacharts-pro' ),
+            'manage_options',
+            'wpdcp-miners-import',
+            [ $pages, 'renderMinersImport' ]
+        );
+
+        // Miners: Data List.
+        add_submenu_page(
+            'wpdcp-dashboard',
+            __( 'Miners Data', 'wp-datacharts-pro' ),
+            __( 'Miners Data', 'wp-datacharts-pro' ),
+            'manage_options',
+            'wpdcp-miners-list',
+            [ $pages, 'renderMinersList' ]
+        );
     }
 }

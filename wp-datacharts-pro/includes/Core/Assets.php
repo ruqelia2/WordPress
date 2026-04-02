@@ -68,6 +68,25 @@ class Assets {
                 'version' => WPDCP_VERSION,
             ]
         );
+
+        // Miners import pages: enqueue dedicated importer assets.
+        $screen = get_current_screen();
+        if ( $screen && ( str_contains( $screen->id, 'miners-import' ) || str_contains( $screen->id, 'miners-list' ) ) ) {
+            wp_enqueue_style(
+                'wpdcp-admin-importer',
+                Helpers::pluginUrl( 'assets/css/admin-importer.css' ),
+                [ 'wpdcp-admin' ],
+                WPDCP_VERSION
+            );
+
+            wp_enqueue_script(
+                'wpdcp-admin-importer',
+                Helpers::pluginUrl( 'assets/js/admin-importer.js' ),
+                [ 'jquery' ],
+                WPDCP_VERSION,
+                true
+            );
+        }
     }
 
     /**
